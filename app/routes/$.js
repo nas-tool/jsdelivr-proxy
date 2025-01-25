@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 export async function loader({ request, params }) {
   const path = params["*"];
-  const targetUrl = `https://cdn.jsdelivr.net/gh/geeklinux-io/Picture/${path}`;
+  const targetUrl = `https://cdn.jsdelivr.net/gh/geeklinux-io/${path}`;
   
   try {
     const startTime = Date.now();

@@ -3,7 +3,7 @@ import { json } from "@remix-run/node";
 export async function loader() {
   return json({
     code: 200,
-    message: "",
+    message: "ok",
     status: "ok"
   });
 }
