@@ -19,10 +19,11 @@ export async function loader({ request, params }) {
         "Content-Type": response.headers.get("Content-Type") || "application/octet-stream",
         "x-envoy-upstream-service-time": upstreamTime.toString(),
         "x-envoy-upstream-healthchecked-cluster": "hkg",
-        "x-envoy-expected-rq-timeout-ms": "5000"
+        "x-envoy-expected-rq-timeout-ms": "5000",
+        "Cache-Control": "public, max-age=31536000, immutable"
       },
     });
   } catch (error) {
-    return json({ error: "Proxy error" }, { status: 500 });
+    return json({ error: "Network error" }, { status: 500 });
   }
 }
