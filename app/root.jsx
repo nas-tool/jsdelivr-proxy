@@ -16,6 +16,9 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <p>Powered by Haoyu Wang</p>
+        </div>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
