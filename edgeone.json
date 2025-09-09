@@ -1,0 +1,16 @@
+{
+  "$schema": "https://edgeone.ai/schema/edgeone.json",
+  "name": "jsdelivr-proxy",
+  "build": {
+    "command": "npm run build",
+    "outputDirectory": "dist"
+  },
+  "runtime": "nodejs18.x",
+  "entry": "server.js",
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "/server.js"
+    }
+  ]
+}

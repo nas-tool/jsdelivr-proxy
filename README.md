@@ -69,20 +69,18 @@ curl http://localhost:3000/
 
 ## 部署
 
-### EdgeOne 部署
+### EdgeOne Pages 部署
 
-**重要：EdgeOne直接运行Node.js应用，无需构建步骤**
+1. 创建 `edgeone.json` 配置文件（已包含）
+2. 上传项目到 EdgeOne Pages
+3. EdgeOne 会自动执行构建命令 `npm run build`
+4. 构建产物会输出到 `dist/` 目录
+5. 配置会自动设置：
+   - 运行时：Node.js 18.x
+   - 入口文件：`server.js`
+   - 路由：所有请求转发到 `server.js`
 
-1. 将整个项目上传到 EdgeOne
-2. 确保 `server.js` 为入口文件
-3. 设置启动命令：`npm start` 或 `node server.js`
-4. 配置环境变量：
-   - `NODE_ENV=production`
-   - `PORT=8080` (或EdgeOne指定端口)
-
-**路由配置**：
-- 根路径 `/` 返回健康检查
-- 所有其他路径 `/*` 代理到 jsdelivr CDN
+**配置文件**：项目包含 `edgeone.json` 配置文件，无需手动配置。
 
 ### Vercel 部署
 
