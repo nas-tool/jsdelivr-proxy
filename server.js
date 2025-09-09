@@ -33,7 +33,7 @@ app.get('*', async (req, res) => {
     res.set({
       'Content-Type': response.headers.get('Content-Type') || 'application/octet-stream',
       'x-envoy-upstream-service-time': upstreamTime.toString(),
-      'x-envoy-upstream-healthchecked-cluster': 'hkg',
+      'x-envoy-upstream-healthchecked-cluster': 'zh-cn',
       'x-envoy-expected-rq-timeout-ms': '5000',
       'Cache-Control': 'public, max-age=31536000, immutable'
     });

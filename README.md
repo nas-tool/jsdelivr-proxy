@@ -69,13 +69,20 @@ curl http://localhost:3000/
 
 ## 部署
 
-### EdgeOne Functions 部署
+### EdgeOne 部署
 
-1. 将项目上传到 EdgeOne Functions
-2. 确保 `api/server.js` 文件存在
-3. 配置路由规则：
-   - `/` -> `/api/server`
-   - `/*` -> `/api/server`
+**重要：EdgeOne直接运行Node.js应用，无需构建步骤**
+
+1. 将整个项目上传到 EdgeOne
+2. 确保 `server.js` 为入口文件
+3. 设置启动命令：`npm start` 或 `node server.js`
+4. 配置环境变量：
+   - `NODE_ENV=production`
+   - `PORT=8080` (或EdgeOne指定端口)
+
+**路由配置**：
+- 根路径 `/` 返回健康检查
+- 所有其他路径 `/*` 代理到 jsdelivr CDN
 
 ### Vercel 部署
 
