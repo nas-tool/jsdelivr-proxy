@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 // 通配符路由处理所有其他请求（必须放在具体路由之后）
 app.get('*', async (req, res) => {
   const path = req.path.slice(1); // 移除开头的斜杠
-  const targetUrl = `https://cdn.jsdelivr.net/gh/geeklinux-io/${path}`;
+  const targetUrl = `https://cdn.jsdelivr.net/gh/nas-tool/${path}`;
   
   try {
     const startTime = Date.now();

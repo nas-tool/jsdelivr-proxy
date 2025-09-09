@@ -69,6 +69,18 @@ curl http://localhost:3000/
 
 ## 部署
 
+### EdgeOne Functions 部署
+
+1. 将项目上传到 EdgeOne Functions
+2. 确保 `api/server.js` 文件存在
+3. 配置路由规则：
+   - `/` -> `/api/server`
+   - `/*` -> `/api/server`
+
+### Vercel 部署
+
+直接部署到 Vercel，已包含 `vercel.json` 配置文件。
+
 ### Docker 部署
 
 ```dockerfile
